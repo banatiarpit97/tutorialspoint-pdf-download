@@ -1,0 +1,23 @@
+{
+  "name": "tutorialspoint-pdf-download",
+  "version": "1.0.0",
+  "description": "tool to download tutorials from tutorialspoint in pdf format using cli",
+  "main": "tutorialspoint.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/banatiarpit97/tutorialspoint-pdf-download.git"
+  },
+  "author": "Arpit Banati",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/banatiarpit97/tutorialspoint-pdf-download/issues"
+  },
+  "homepage": "https://github.com/banatiarpit97/tutorialspoint-pdf-download#readme",
+  "dependencies": {
+    "puppeteer": "^1.11.0",
+    "yargs": "^12.0.5"
+  }
+}
