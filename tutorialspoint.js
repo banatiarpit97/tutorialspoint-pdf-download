@@ -20,11 +20,8 @@ if(!yargs.argv["url"]){
             let anchors = await page.$$("ul.nav.nav-list.primary.left-menu li a");
             for(let i=0;i<anchors.length;i++){  
                 try{
-                    let title = await page.evaluate((link) => {
-                        return link.innerHTML;
-                    }, anchors[i])
-                    let link = await page.evaluate((link) => {
-                        return link.getAttribute('href');
+                    let [title, link] = await page.evaluate((link) => {
+                        return [link.innerHTML, link.getAttribute('href')];
                     }, anchors[i])
                     let pg = await browser.newPage();
                     await pg.goto(baseURL + link, { waitUntil: 'networkidle2' });
@@ -39,6 +36,7 @@ if(!yargs.argv["url"]){
                     console.log('error downloading the pdf', e)
                 }
             }
+
             await browser.close();
         
     })();
